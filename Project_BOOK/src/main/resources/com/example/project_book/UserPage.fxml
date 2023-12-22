@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="564.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_book.Controller">
+
+   <!-- Header Pane -->
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="58.0" prefWidth="712.0" style="-fx-background-color: #3498db;">
+         <children>
+            <AnchorPane fx:id="user_label_recommed" layoutY="3.0" prefHeight="54.0" prefWidth="636.0" visible="false">
+               <children>
+                  <Label layoutX="236.0" layoutY="9.0" text="Recommendations" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="admin_label_all_books" prefHeight="54.0" prefWidth="636.0">
+               <children>
+                  <Label layoutX="282.0" layoutY="10.0" text="All Book">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="user_author_subscribe_but" layoutX="631.0" layoutY="14.0" mnemonicParsing="false" onAction="#user_author_subscribe_but" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="subscribe" visible="false" />
+            <Button fx:id="user_author_unsubscribe_but" layoutX="618.0" layoutY="14.0" mnemonicParsing="false" onAction="#user_author_subscribe_but" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="unsubscribe" visible="false" />
+            <AnchorPane fx:id="user_labels_author" prefHeight="54.0" prefWidth="636.0" visible="false">
+               <children>
+                  <Label layoutX="272.0" layoutY="9.0" prefHeight="35.0" prefWidth="92.0" text="Author">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="admin_label_profile" layoutX="10.0" layoutY="10.0" prefHeight="54.0" prefWidth="636.0" visible="false">
+               <children>
+                  <Label layoutX="279.0" layoutY="9.0" text="My Profile">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+
+            <!-- Side Menu Pane -->
+      <AnchorPane layoutY="55.0" prefHeight="510.0" prefWidth="155.0" style="-fx-background-color: #2c3e50;">
+         <children>
+            <Button layoutY="14.0" mnemonicParsing="false" onAction="#user_book_but" prefHeight="40.0" prefWidth="155.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="All Books" />
+            <Button layoutY="60.0" mnemonicParsing="false" onAction="#user_book_recommend_but" prefHeight="40.0" prefWidth="155.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Recommendations" />
+            <Button layoutY="110.0" mnemonicParsing="false" onAction="#user_book_author_but" prefHeight="40.0" prefWidth="155.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Authors" />
+            <Button layoutY="470.0" mnemonicParsing="false" onAction="#user_book_logout_but" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" />
+            <Button layoutY="159.0" mnemonicParsing="false" onAction="#user_book_profile_but" prefHeight="40.0" prefWidth="155.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="My Profile" />
+         </children>
+      </AnchorPane>
+
+            <!-- Buy Button -->
+      <Button fx:id="user_book_buy_but" layoutX="635.0" layoutY="15.0" mnemonicParsing="false" onAction="#user_book_buy_but" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Buy" visible="false" />
+      <AnchorPane fx:id="admin_table_view_allBooks" layoutX="155.0" layoutY="58.0" prefHeight="504.0" prefWidth="558.0" visible="false">
+         <children>
+      
+                  <!-- Main Content Table -->
+            <TableView fx:id="table_all_book" prefHeight="510.0" prefWidth="558.0">
+               <columns>
+                  <TableColumn fx:id="user_price" prefWidth="120.0" text="Price" />
+                  <TableColumn fx:id="user_bookName" prefWidth="437.5999816894531" text="Book Name" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="admin_table_view_recommend" layoutX="155.0" layoutY="55.0" prefHeight="510.0" prefWidth="558.0">
+         <children>
+            <TableView fx:id="table_recommend" prefHeight="510.0" prefWidth="558.0">
+               <columns>
+                  <TableColumn fx:id="user_recommend_price" prefWidth="120.0" text="Price" />
+                  <TableColumn fx:id="user_recommend_book_name" prefWidth="437.5998840332031" text="Book Name" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="user_table_view_author" layoutX="155.0" layoutY="58.0" prefHeight="510.0" prefWidth="558.0" visible="false">
+         <children>
+            <TableView fx:id="table_author" prefHeight="510.0" prefWidth="557.0">
+               <columns>
+                  <TableColumn fx:id="user_ltable_view_author" prefWidth="556.7999969482422" text="Authors" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="profile_button" layoutX="155.0" layoutY="55.0" prefHeight="510.0" prefWidth="558.0" visible="false">
+         <children>
+            <Label layoutX="22.0" layoutY="67.0" prefHeight="26.0" prefWidth="80.0" text="My Coins:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="coint" layoutX="102.0" layoutY="71.0" prefHeight="18.0" prefWidth="92.0" />
+            <Label layoutX="22.0" layoutY="97.0" prefHeight="26.0" prefWidth="141.0" text="My favorite genre:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBox_genre" layoutX="164.0" layoutY="97.0" onAction="#comboBox_genre" prefWidth="150.0" promptText=" Genre" />
+            <Label layoutX="22.0" layoutY="41.0" prefHeight="18.0" prefWidth="80.0" text="My Status:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="user_status" layoutX="108.0" layoutY="45.0" prefHeight="18.0" prefWidth="80.0" />
+            <AnchorPane fx:id="user_add_book_anchor" layoutX="333.0" layoutY="20.0" prefHeight="85.0" prefWidth="210.0" visible="false">
+               <children>
+                  <Button layoutX="144.0" layoutY="17.0" mnemonicParsing="false" onAction="#user_add_book" text="Add Book" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="user_orders" layoutX="14.0" layoutY="132.0" prefHeight="158.0" prefWidth="347.0">
+              <columns>
+                <TableColumn fx:id="user_orders_details" prefWidth="346.3999816894531" text="Orders details" />
+              </columns>
+            </TableView>
+            <TableView fx:id="admin_profile_author" layoutX="14.0" layoutY="296.0" prefHeight="200.0" prefWidth="347.0">
+              <columns>
+                <TableColumn fx:id="admin_profile_author_name" prefWidth="346.3999816894531" text="Authors Names" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
+
